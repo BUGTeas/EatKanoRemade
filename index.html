@@ -78,12 +78,10 @@ height:100%;
 <body>
 <p id="score" style="position:absolute;width:100%;text-align:center;font-size:30px;z-index:5;color:rgb(0,200,195);text-shadow:1px 1px 2px #fff,-1px -1px 2px #fff">请稍候...</p>
 <div id="alertbg"></div>
-<div id="audio" style="display:none"></div>
-<div id="audio2" style="display:none"></div>
 <!--主体-->
 <div id="main" class="main">
 <div id="masker" style="position:absolute;width:100%;height:100%;z-index:4"></div>
-<table id="line1" style="width:100%;height:350px;position:absolute;z-index:2">
+<table id="part1_table" style="width:100%;height:350px;position:absolute;z-index:2">
 <tr>
 <td id="part1_1_1" class="part1"></td>
 <td id="part1_1_2" class="part1"></td>
@@ -120,7 +118,7 @@ height:100%;
 <td id="part1_5_5" class="part1"></td>
 </tr>
 </table>
-<table id="line2" style="width:100%;height:350px;position:absolute;z-index:2">
+<table id="part2_table" style="width:100%;height:350px;position:absolute;z-index:2">
 <tr>
 <td id="part2_1_1" class="part2"></td>
 <td id="part2_1_2" class="part2"></td>
@@ -298,7 +296,7 @@ height:100%;
 <div id="click_sound_disable" class="mode_button" onclick="click_sound_disable()">无</div><div id="click_sound_default" class="mode_button" onclick="click_sound_default()">默认</div><div id="click_sound_custom" class="mode_button" onclick="click_sound_custom()">自定义文件</div>
 </div>
 <div id="click_sound_default_option" style="display:none">
-<div id="click_sound_default_1" class="mode_button" style="width:121px" onclick="click_sound_default_1();audio = document.createElement('audio');audio.src = 'click_sound_default_1.mp3';audio.play();">声音一</div><div id="click_sound_default_2" class="mode_button" style="width:121px" onclick="click_sound_default_2();audio = document.createElement('audio');audio.src = 'click_sound_default_2.mp3';audio.play();">声音二</div>
+<div id="click_sound_default_1" class="mode_button" style="width:121px" onclick="click_sound_default_1();audio = document.createElement('audio');audio.src = 'Resources/click_sound_default_1.mp3';audio.play();">声音一</div><div id="click_sound_default_2" class="mode_button" style="width:121px" onclick="click_sound_default_2();audio = document.createElement('audio');audio.src = 'Resources/click_sound_default_2.mp3';audio.play();">声音二</div>
 </div>
 <div id="click_sound_custom_option"></div>
 </div>

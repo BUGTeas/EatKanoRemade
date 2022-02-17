@@ -185,7 +185,7 @@ if(part1_before_click_inner_mode=="html"){click_inner_before_html()};
 if(part1_after_click_inner_mode=="default"){click_inner_after_default()};
 if(part1_after_click_inner_mode=="image"){click_inner_after_image()};
 if(part1_after_click_inner_mode=="html"){click_inner_after_html()};
-if(part1_click_sound_mode=="disable"){click_sound_disable()};
+if(part1_click_sound_mode=="disabled"){click_sound_disable()};
 if(part1_click_sound_mode=="default"){click_sound_default()};
 if(part1_click_sound_mode=="custom"){click_sound_custom()};
 }
@@ -212,7 +212,7 @@ if(part2_before_click_inner_mode=="html"){click_inner_before_html()};
 if(part2_after_click_inner_mode=="default"){click_inner_after_default()};
 if(part2_after_click_inner_mode=="image"){click_inner_after_image()};
 if(part2_after_click_inner_mode=="html"){click_inner_after_html()};
-if(part2_click_sound_mode=="disable"){click_sound_disable()};
+if(part2_click_sound_mode=="disabled"){click_sound_disable()};
 if(part2_click_sound_mode=="default"){click_sound_default()};
 if(part2_click_sound_mode=="custom"){click_sound_custom()};
 }
@@ -806,14 +806,14 @@ document.getElementById("chance").innerHTML = " 无限机会";
 cnt = 0;
 document.getElementById("count").innerHTML = "次数: " + cnt;
 //设置界面主题
-document.getElementById("line1").style.background = part1_border;
-document.getElementById("line2").style.background = part2_border;
+document.getElementById("part1_table").style.background = part1_border;
+document.getElementById("part2_table").style.background = part2_border;
 document.getElementById("title").innerHTML = document.getElementById("user_title_input").value;
 //载入游戏
 part1_fullheight = 348;
 part2_fullheight = 348;
 document.getElementById("masker").style.bottom = "70px";
-document.getElementById("switch_animation").innerHTML = "#line2{bottom:348px;}#line1{bottom:0px;}";
+document.getElementById("switch_animation").innerHTML = "#part2_table{bottom:348px;}#part1_table{bottom:0px;}";
 document.getElementById("end_animation").innerHTML = "";
 part1_reset();
 part2_reset();
@@ -892,7 +892,7 @@ play_part1_click_sound();
 document.getElementById("main").style.background = part1_background;
 var random1 = "falla" + animation_cnt;
 var random2 = "fallb" + animation_cnt;
-document.getElementById("switch_animation").innerHTML = "#line1{bottom:calc(" + part1_fullheight + "px - 418px);animation-name:" + random1 +";animation-duration:0.1s;}@keyframes " + random1 +"{0%{bottom:calc(" + part1_fullheight + "px - 348px)}100%{bottom:calc(" + part1_fullheight + "px - 418px)}}#line2{bottom:calc(" + part1_fullheight + "px - 70px);animation-name:" + random2 +";animation-duration:0.1s;}@keyframes " + random2 +"{0%{bottom:" + part1_fullheight + "px}100%{bottom:calc(" + part1_fullheight + "px - 70px)}}";
+document.getElementById("switch_animation").innerHTML = "#part1_table{bottom:calc(" + part1_fullheight + "px - 418px);animation-name:" + random1 +";animation-duration:0.1s;}@keyframes " + random1 +"{0%{bottom:calc(" + part1_fullheight + "px - 348px)}100%{bottom:calc(" + part1_fullheight + "px - 418px)}}#part2_table{bottom:calc(" + part1_fullheight + "px - 70px);animation-name:" + random2 +";animation-duration:0.1s;}@keyframes " + random2 +"{0%{bottom:" + part1_fullheight + "px}100%{bottom:calc(" + part1_fullheight + "px - 70px)}}";
 part1_fullheight = part1_fullheight - 70;
 if(part1_fullheight<=0){
 setTimeout("part1_turn();",100);
@@ -901,7 +901,7 @@ setTimeout("part1_turn();",100);
 //将一区移至顶部并重新设置
 function part1_turn(){
 part1_fullheight = 348;
-document.getElementById("switch_animation").innerHTML = "#line1{bottom:348px;}#line2{bottom:0px;}";
+document.getElementById("switch_animation").innerHTML = "#part1_table{bottom:348px;}#part2_table{bottom:0px;}";
 part1_reset();
 }
 //二区按键点击后
@@ -911,7 +911,7 @@ play_part2_click_sound();
 document.getElementById("main").style.background = part2_background;
 var random1 = "falla" + animation_cnt;
 var random2 = "fallb" + animation_cnt;
-document.getElementById("switch_animation").innerHTML = "#line1{bottom:calc(" + part2_fullheight + "px - 70px);animation-name:" + random2 +";animation-duration:0.1s;}@keyframes " + random1 +"{0%{bottom:calc(" + part2_fullheight + "px - 348px)}100%{bottom:calc(" + part2_fullheight + "px - 418px)}}#line2{bottom:calc(" + part2_fullheight + "px - 418px);animation-name:" + random1 +";animation-duration:0.1s;}@keyframes " + random2 +"{0%{bottom:" + part2_fullheight + "px}100%{bottom:calc(" + part2_fullheight + "px - 70px)}}";
+document.getElementById("switch_animation").innerHTML = "#part1_table{bottom:calc(" + part2_fullheight + "px - 70px);animation-name:" + random2 +";animation-duration:0.1s;}@keyframes " + random1 +"{0%{bottom:calc(" + part2_fullheight + "px - 348px)}100%{bottom:calc(" + part2_fullheight + "px - 418px)}}#part2_table{bottom:calc(" + part2_fullheight + "px - 418px);animation-name:" + random1 +";animation-duration:0.1s;}@keyframes " + random2 +"{0%{bottom:" + part2_fullheight + "px}100%{bottom:calc(" + part2_fullheight + "px - 70px)}}";
 part2_fullheight = part2_fullheight - 70;
 if(part2_fullheight<=0){
 setTimeout("part2_turn();",100);
@@ -920,7 +920,7 @@ setTimeout("part2_turn();",100);
 //将二区移至顶部并重新设置
 function part2_turn(){
 part2_fullheight = 348;
-document.getElementById("switch_animation").innerHTML = "#line2{bottom:348px;}#line1{bottom:0px;}";
+document.getElementById("switch_animation").innerHTML = "#part2_table{bottom:348px;}#part1_table{bottom:0px;}";
 part2_reset();
 }
 var click_mode_cnt = "a";
